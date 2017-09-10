@@ -13,6 +13,11 @@ body {
 .navbar-brand-shell {
   padding: 20px 30px;
 }
+@media (max-width: 768px) {
+  .navbar-brand-shell {
+    padding: 15px;
+  }
+}
 .navbar-shell {
   background-color: #d42e12;
 }
