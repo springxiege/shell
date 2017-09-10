@@ -7,7 +7,16 @@ body {
 }
 .navbar-shell {
   background-color: @primary-color;
-  padding-right: 40px;
+  // padding-right: 40px;
+  .navbar-right {
+    padding-right: 40px;
+  }
+  .navbar-collapse.in,
+  .collapsing {
+    .navbar-right {
+      padding-right: 0;
+    }
+  }
   a {
     color: @white;
     font-family: "HanSans", "HanSansZh";

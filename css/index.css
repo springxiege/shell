@@ -15,7 +15,13 @@ body {
 }
 .navbar-shell {
   background-color: #d42e12;
+}
+.navbar-shell .navbar-right {
   padding-right: 40px;
+}
+.navbar-shell .navbar-collapse.in .navbar-right,
+.navbar-shell .collapsing .navbar-right {
+  padding-right: 0;
 }
 .navbar-shell a {
   color: #fff;
