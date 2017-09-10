@@ -1,0 +1,12 @@
+a {
+  color: #d42e12;
+}
+.b {
+  color: #f1301b;
+}
+.b > a {
+  color: #d42e12;
+}
+.c {
+  color: #404040;
+}

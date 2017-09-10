@@ -1,0 +1,14 @@
+@import "mix";
+a {
+  color: @primary-color;
+}
+.b {
+  color: @current-color;
+  > a {
+    color: @primary-color;
+  }
+}
+.c {
+  color: @default-color;
+}
+// before is for test
