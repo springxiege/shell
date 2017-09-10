@@ -1,12 +1,84 @@
-a {
-  color: #d42e12;
+@font-face {
+  font-family: 'HanSans';
+  src: url('../bootstrap/fonts/font-en/Futura.ttc');
 }
-.b {
-  color: #f1301b;
+@font-face {
+  font-family: 'HanSansZh';
+  src: url('../bootstrap/fonts/font-zh/SourceHanSansCN-Regular.otf');
+  src: url('../bootstrap/fonts/font-zh/SourceHanSansCN-Regular.otf') format('otf');
 }
-.b > a {
-  color: #d42e12;
+body {
+  padding-bottom: 60px;
 }
-.c {
-  color: #404040;
+.navbar-brand-shell {
+  padding: 20px 30px;
+}
+.navbar-shell {
+  background-color: #d42e12;
+  padding-right: 40px;
+}
+.navbar-shell a {
+  color: #fff;
+  font-family: "HanSans", "HanSansZh";
+}
+.navbar-shell .icon-bar {
+  background-color: #fff;
+}
+.navbar-shell .nav > li > a {
+  height: 60px;
+  padding: 0 20px;
+  min-width: 100px;
+  text-align: center;
+  overflow: hidden;
+}
+.navbar-shell .nav > li > a > div {
+  height: 120px;
+  line-height: 60px;
+  transition: all .5s;
+  transform: translateY(0px);
+  overflow: hidden;
+}
+.navbar-shell .nav > li > a > div > p {
+  margin: 0;
+  padding: 0;
+}
+.navbar-shell .nav > li:hover > a {
+  background-color: #f1301b;
+}
+.navbar-shell .nav > li:hover > a > div {
+  transition: all .5s;
+  transform: translateY(-60px);
+}
+.navbar-shell .nav > li > .dropdown-menu {
+  min-width: 100%;
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  padding: 15px 0 0;
+  background-color: #f1301b;
+}
+.navbar-shell .nav > li > .dropdown-menu > li > a {
+  color: #fff;
+  padding: 10px 20px;
+  background-color: #f1301b;
+}
+.navbar-shell .nav > li > .dropdown-menu > li > a:hover,
+.navbar-shell .nav > li > .dropdown-menu > li > a:focus {
+  background-color: #d42e12;
+  color: #fff;
+}
+.navbar-shell .nav > li.open > a {
+  background-color: #f1301b;
+}
+.navbar-shell .nav > li.open > .dropdown-menu {
+  display: none;
+}
+.navbar-shell .nav > li:hover > .dropdown-menu {
+  display: block;
+}
+.navbar-shell .nav > li.active > a,
+.navbar-shell .nav > li > a:focus,
+.navbar-shell .nav > li > a:hover,
+.navbar-shell .nav .open > a:hover {
+  background-color: #f1301b;
 }
