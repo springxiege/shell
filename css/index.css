@@ -1,3 +1,6 @@
+.bsb {
+  box-sizing: border-box;
+}
 @font-face {
   font-family: 'HanSans';
   src: url('../bootstrap/fonts/font-en/Futura.ttc');
@@ -9,6 +12,14 @@
 }
 body {
   padding-bottom: 60px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
 }
 .navbar-brand-shell {
   padding: 20px 30px;
@@ -16,6 +27,9 @@ body {
 @media (max-width: 768px) {
   .navbar-brand-shell {
     padding: 15px;
+  }
+  .container-fluid-product {
+    position: relative !important;
   }
 }
 .navbar-shell {
@@ -92,4 +106,136 @@ body {
 .navbar-shell .nav > li > a:hover,
 .navbar-shell .nav .open > a:hover {
   background-color: #f1301b;
+}
+.container-fluid-product {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.container-fluid-product .logo {
+  position: absolute;
+  z-index: 2;
+  left: 30px;
+  top: 25px;
+}
+.container-fluid-product > .row {
+  height: 100%;
+  overflow: hidden;
+}
+.container-fluid-product > .row > div {
+  padding: 0;
+  height: 100%;
+}
+.container-fluid-product > .row > div > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.container-fluid-product > .row > div > a:hover .product .summary {
+  display: block;
+  opacity: 1;
+  transition: all 1.2s linear;
+}
+.container-fluid-product > .row > div > a:hover .product .tips {
+  opacity: 0;
+  transition: all .5s;
+}
+.container-fluid-product > .row > div:nth-of-type(2) img {
+  margin-left: -130%;
+}
+.container-fluid-product > .row > div:nth-of-type(3) img {
+  margin-left: -20%;
+}
+.container-fluid-product > .row > div:nth-of-type(4) img {
+  margin-left: -50%;
+}
+.container-fluid-product .product {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.container-fluid-product .product img {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.container-fluid-product .product .summary,
+.container-fluid-product .product .tips {
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+  width: 80%;
+  height: 140px;
+  margin-left: -40%;
+  left: 50%;
+  bottom: 15%;
+  padding: 0 20px;
+  background-color: #fff;
+  border-bottom: 10px solid #d42e12;
+  transition: all .8s linear;
+}
+.container-fluid-product .product .summary table,
+.container-fluid-product .product .tips table {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.container-fluid-product .product .summary table td,
+.container-fluid-product .product .tips table td {
+  color: #404040;
+  line-height: 24px;
+}
+.container-fluid-product .product .summary table td p,
+.container-fluid-product .product .tips table td p {
+  padding: 0;
+  margin: 0;
+}
+.container-fluid-product .product .tips {
+  opacity: 1;
+  border: 0;
+  background: none;
+  color: #fff;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  padding-top: 20px;
+  transition: all .5s;
+}
+.container-fluid-product .product .tips > p {
+  font-size: 36px;
+  font-weight: 200;
+}
+.container-fluid-product .oil {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 80px;
+  overflow-y: auto;
+}
+.container-fluid-product .oil .oil-img img {
+  display: block;
+  width: 68%;
+}
+.container-fluid-product .oil h2 {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.container-fluid-product .oil .oil-content {
+  font-size: 16px;
+  color: #404040;
+  font-weight: 200;
+  line-height: 26px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+.container-fluid-product .oil .oil-content p {
+  margin-bottom: 20px;
 }
