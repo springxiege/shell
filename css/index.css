@@ -192,6 +192,7 @@ body {
 .container-fluid-product .product .tips table td {
   color: #404040;
   line-height: 24px;
+  font-size: 16px;
 }
 .container-fluid-product .product .summary table td p,
 .container-fluid-product .product .tips table td p {
