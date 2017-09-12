@@ -1,0 +1,31 @@
+.bsb {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'HanSans';
+  src: url('../bootstrap/fonts/font-en/Futura.ttc');
+}
+@font-face {
+  font-family: 'HanSansZh';
+  src: url('../bootstrap/fonts/font-zh/SourceHanSansCN-Regular.otf');
+  src: url('../bootstrap/fonts/font-zh/SourceHanSansCN-Regular.otf') format('otf');
+}
+.container-fluid-here {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: url('../images/here.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: auto auto;
+}
+.container-fluid-here .logo {
+  position: absolute;
+  z-index: 2;
+  left: 30px;
+  top: 25px;
+}

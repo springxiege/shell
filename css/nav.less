@@ -1,0 +1,109 @@
+@import "mix";
+.navbar-shell {
+  background-color: @primary-color;
+  // padding-right: 40px;
+  .navbar-right {
+    padding-right: 40px;
+  }
+  .navbar-collapse.in,
+  .collapsing {
+    .navbar-right {
+      padding-right: 0;
+    }
+  }
+  a {
+    color: @white;
+    font-family: "HanSans", "HanSansZh";
+  }
+  .icon-bar {
+    background-color: @white;
+  }
+  .nav {
+    >li {
+      >a {
+        height: 60px;
+        padding: 0 20px;
+        min-width: 100px;
+        text-align: center;
+        overflow: hidden;
+        > div {
+          height: 120px;
+          line-height: 60px;
+          transition: all .5s;
+          transform: translateY(0px);
+          overflow: hidden;
+          > p {
+            margin: 0;
+            padding: 0;
+          }
+        }
+        // &:hover {
+        //   > div {
+        //     transition: all .5s;
+        //     transform: translateY(-60px);
+        //   }
+        // }
+      }
+      &:hover {
+        > a {
+          background-color: @current-color;
+          > div {
+            transition: all .5s;
+            transform: translateY(-60px);
+          }
+        }
+
+      }
+      // &.active {
+      //   > a {
+      //     div {
+      //       transition: all .5s;
+      //       transform: translateY(-60px);
+      //     }
+      //   }
+      // }
+      >.dropdown-menu {
+        min-width: 100%;
+        border-radius: 0;
+        border: 0;
+        box-shadow: none;
+        padding: 15px 0 0;
+        background-color: @current-color;
+        > li {
+          > a {
+            color: @white;
+            padding: 10px 20px;
+            background-color: @current-color;
+            &:hover, &:focus{
+              background-color: @primary-color;
+              color: @white;
+            }
+          }
+        }
+      }
+      &.open {
+        > a {
+          background-color: @current-color;
+        }
+        > .dropdown-menu {
+          display: none;
+        }
+      }
+      &:hover {
+        > .dropdown-menu {
+          display: block;
+        }
+      }
+    }
+  }
+  // .nav> li> a{
+  //   padding-top: 20px;
+  //   padding-bottom: 20px;
+  // }
+  .nav>li.active>a,
+  .nav>li>a:focus,
+  .nav>li>a:hover,
+  .nav .open>a:hover{
+    background-color: @current-color;
+  }
+}

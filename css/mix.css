@@ -1,0 +1,12 @@
+.bsb {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'HanSans';
+  src: url('../bootstrap/fonts/font-en/Futura.ttc');
+}
+@font-face {
+  font-family: 'HanSansZh';
+  src: url('../bootstrap/fonts/font-zh/SourceHanSansCN-Regular.otf');
+  src: url('../bootstrap/fonts/font-zh/SourceHanSansCN-Regular.otf') format('otf');
+}
