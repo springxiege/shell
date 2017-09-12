@@ -1,0 +1,137 @@
+@import "mix";
+// 产品与服务
+.container-fluid-product {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .logo {
+      position: absolute;
+      z-index: 2;
+      left: 30px;
+      top: 25px;
+    }
+    >.row {
+      height: 100%;
+      overflow: hidden;
+      > div {
+        padding: 0;
+        height: 100%;
+        > a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          &:hover {
+            .product {
+              .summary {
+                display: block;
+                opacity: 1;
+                transition: all 1.2s linear;
+              }
+              .tips {
+                opacity: 0;
+                transition: all .5s;
+              }
+            }
+          }
+        }
+      }
+    }
+    .product {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+      img {
+        display: block;
+        padding: 0;
+        margin: 0;
+        border: 0;
+      }
+      .summary, .tips {
+        opacity: 0;
+        position: absolute;
+        z-index: 2;
+        width: 80%;
+        height: 140px;
+        margin-left: -40%;
+        left: 50%;
+        bottom: 15%;
+        padding: 0 20px;
+        background-color: @white;
+        border-bottom: 10px solid @primary-color;
+        transition: all .8s linear;
+        table {
+          height: 100%;
+          width: 100%;
+          text-align: center;
+          td {
+            color: @default-color;
+            line-height: 24px;
+            font-size: 16px;
+            p {
+              padding: 0;
+              margin: 0;
+            }
+          }
+        }
+      }
+      .tips {
+        opacity: 1;
+        border: 0;
+        background: none;
+        color: @white;
+        text-align: center;
+        font-size: 26px;
+        font-weight: bold;
+        padding-top: 20px;
+        transition: all .5s;
+        > p {
+          font-size: 36px;
+          font-weight: 200;
+        }
+      }
+    }
+    .oil {
+      width: 100%;
+      height: 100%;
+      padding-bottom: 80px;
+      overflow-y: auto;
+      .oil-img {
+        img {
+          display: block;
+          width: 68%;
+        }
+      }
+      h2 {
+        text-align: center;
+        padding-bottom: 30px;
+        > span {
+          float: left;
+          background-color: @primary-color;
+          color: @white;
+          font-family: 'HanSans';
+          font-size: 22px;
+          font-weight: bold;
+          padding: 5px 10px;
+        }
+      }
+      .oil-content {
+        font-size: 16px;
+        color: @default-color;
+        font-weight: 200;
+        line-height: 26px;
+        padding-left: 10px;
+        padding-right: 10px;
+        .bsb;
+        p {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
