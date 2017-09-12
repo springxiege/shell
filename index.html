@@ -7,10 +7,42 @@
   <title>首页</title>
   <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/swiper.min.css">
 </head>
 <body>
-  <div class="container-fluid">
-    首页内容
+  <div class="container-fluid-home">
+    <div class="videos">
+      <video id="video0" src="./videos/first.mp4" style="display: block;">
+        您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/first.mp4">视频地址</a>
+      </video>
+      <video src="./videos/second.mp4" id="video1">
+        您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/second.mp4">视频地址</a>
+      </video>
+    </div>
+    <div class="swiper-container-wrapper">
+      <!-- Swiper -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="first swiper-img">
+              <img src="./images/first.jpg" width="100%" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          <div class="swiper-slide">Slide 4</div>
+          <div class="swiper-slide">Slide 5</div>
+          <div class="swiper-slide">Slide 6</div>
+          <div class="swiper-slide">Slide 7</div>
+          <div class="swiper-slide">Slide 8</div>
+          <div class="swiper-slide">Slide 9</div>
+          <div class="swiper-slide">Slide 10</div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
   </div>
   <nav class="navbar navbar-shell navbar-fixed-bottom">
     <div class="container-fluid">
@@ -22,7 +54,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand navbar-brand-shell" href="#">浙江壳牌燃油有限公司</a>
+        <a class="navbar-brand navbar-brand-shell" href="./index.html">浙江壳牌燃油有限公司</a>
       </div>
       <!-- Collect the nav links -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -95,5 +127,72 @@
   </nav>
   <script src="./js/jquery.min-1.12.1.js"></script>
   <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <script src="./js/swiper.jquery.min.js"></script>
+  <script>
+    $(function(){
+
+      var getVideoCanPlay = function (video){
+        return new Promise(resolve => {
+          if(!video.readyState){
+            video.oncanplay = () => {
+              // console.log('play')
+              resolve(video)
+            }
+          }else {
+            resolve(video)
+          }
+
+        })
+      }
+
+
+      var prevSlideIndex = 0;
+      var video1EndMonitor = null;
+      var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        direction: 'vertical',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 30,
+        mousewheelControl: true,
+        effect: 'fade',
+        fade: {crossFade: true},
+        onInit: function (){
+          var video0 = document.getElementById('video0');
+          var video1 = document.getElementById('video1');
+          getVideoCanPlay(video0).then((video) => {
+            video.play();
+          })
+          video0EndMonitor = setInterval(() => {
+            if(video0.ended) {
+              // 视频播放结束
+              console.log(video0.ended)
+              $('.first').addClass('end').removeClass('start');
+              video0EndMonitor && clearInterval(video0EndMonitor);
+              video0EndMonitor = null;
+              video0.style.display = 'none';
+              video1.style.display = 'block';
+            }
+          })
+        },
+        onSlideChangeEnd: function(swiper){
+          // console.log(swiper)
+          console.log(swiper.activeIndex) //切换结束时，告诉我现在是第几个slide
+          console.log(swiper.activeIndex - prevSlideIndex > 0)
+          if(swiper.activeIndex - prevSlideIndex > 0){
+            // 正序
+            var nextVideo = document.getElementById('video' + swiper.activeIndex);
+            var prevVideo = document.getElementById('video' + prevSlideIndex);
+            getVideoCanPlay(nextVideo).then(video => {
+              video.play();
+            })
+          }else {
+            // 倒序
+          }
+          prevSlideIndex = swiper.activeIndex;
+        }
+      });
+    })
+  </script>
 </body>
 </html>
