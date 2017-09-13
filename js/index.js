@@ -43,11 +43,11 @@ $(function(){
       })
     },
     onSlideChangeEnd: function(swiper){
+      swiper.lockSwipes();
       var isReverse = swiper.activeIndex - swiper.previousIndex < 0;
       var currentVideoIndex = !isReverse ? swiper.activeIndex + 1 : swiper.activeIndex;
       var nextVideo = document.getElementById('video' + swiper.activeIndex);
       var prevVideo = document.getElementById('reversevideo' + swiper.previousIndex);
-      swiper.lockSwipes();
       $('.j-video-container-swiper').children().find('.swiper-slide').eq(swiper.previousIndex).find('img').hide();
       if(!isReverse){
         $('.videos').find('video').eq(swiper.activeIndex).show().siblings().hide();
@@ -69,21 +69,27 @@ $(function(){
         })
       }
     },
+    onTouchMove: function(){
+      console.log('move');
+    },
     onScroll: function (swiper, e){
-      // console.log(swiper, e)
+      console.log(swiper, e)
     }
   });
   // 高品质燃油动效
-  var swiper2 = new Swiper('.j-inner-container-swiper', {
-    direction: 'vertical',
-    slidesPerView: 1,
-    paginationClickable: false,
-    spaceBetween: 30,
-    mousewheelControl: true,
-    effect: 'fade',
-    fade: {crossFade: true},
-    onTouchEnd: function (swiper, e){
-      // console.log(swiper, e)
-    }
-  })
+  // var swiper2 = new Swiper('.j-inner-container-swiper', {
+  //   direction: 'vertical',
+  //   slidesPerView: 1,
+  //   paginationClickable: false,
+  //   spaceBetween: 30,
+  //   mousewheelControl: true,
+  //   effect: 'fade',
+  //   fade: {crossFade: true},
+  //   onTransitionEnd: function (){
+  //     console.log('111')
+  //   } ,
+  //   onTouchEnd: function (swiper, e){
+  //     // console.log(swiper, e)
+  //   }
+  // })
 })
