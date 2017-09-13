@@ -12,8 +12,13 @@
   <div class="container-fluid china-box">
     <div class="story-banner-box">
         <div class="story-banner">
-            <div class="bigRed-world"><img src="images/story-china-word.png" width="100%" alt=""></div>
-            <div class="banner"><img src="images/story-china-banner1.png" width="100%" alt=""></div>
+            <div class="bigRed-world"><img src="images/story-china-word.png" width="100%" alt="" /></div>
+            <div class="banner">
+              <a href="#" class="link_global"></a>
+              <a href="#" class="link_china"></a>
+              <a href="#" class="link_zhejiang"></a>
+              <img src="images/story-china-banner1.png" width="100%" alt="" />
+            </div>
             <div class="word-box">
                 <p><b>更共同创造，共同期盼</b></p>
                 <p>展望壳牌为中国梦助力的前景，更将造福深远</p>
@@ -23,8 +28,39 @@
             </div>
         </div>
     </div>
+    <div class="open-bigRed-world">
+      <img src="images/story-china-bg.png" width="100%" alt=""  style="opacity:0"/>
+      <img src="images/story-china-word.png" class="open-bigRed-world-img" width="76%" alt="" />
+      <div class="img-cover"></div>
+    </div>
     <div class="story-center">
-        2
+        <div class="story-left-nev">
+          <a class="active_1" href="#">发展历程</a>
+          <a class="active_2" href="#">发展现状</a>
+          <a class="active_3" href="#">从数字看壳牌中国</a>
+          <a class="active_4" href="#">壳牌在中国的战略</a>
+        </div>
+        <div class="top-gotogether">
+          <img src="images/story-china-bg.png" width="100%" alt="" />
+        </div>
+        <div class="story-center-dis" style="height:1000px;">
+          <div class="story-center-item">
+            <a id="active_1"></a>
+            <img src="images/china01.png" width="100%" alt="">
+          </div>
+          <div class="story-center-item">
+            <a id="active_2"></a>
+            <img src="images/china02.png" width="100%" alt="">
+          </div>
+          <div class="story-center-item">
+            <a id="active_3"></a>
+            <img src="images/china03.png" width="100%" alt="">
+          </div>
+          <div class="story-center-item">
+            <a id="active_4"></a>
+            <img src="images/china04.png" width="100%" alt="">
+          </div>
+        </div>
     </div>
   </div>
   <nav class="navbar navbar-shell navbar-fixed-bottom">
@@ -110,5 +146,58 @@
   </nav>
   <script src="./js/jquery.min-1.12.1.js"></script>
   <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <script>
+    //页面滚动
+    $(window).scroll(function () {
+      var _resettop=$(".story-center").offset().top;
+      var _wintop=$(window).scrollTop();
+      if(_wintop > 100 && _wintop < _resettop){
+        $('.open-bigRed-world').css({opacity:1});
+        $('.bigRed-world').css({opacity:0});
+      }else if(_wintop < _resettop && _wintop != 0){
+        $('.open-bigRed-world').css({opacity:0});
+        $('.bigRed-world').css({opacity:1});
+      }
+      if(_wintop > _resettop){
+        $('.open-bigRed-world .img-cover').css({opacity:0.5});
+        $('.top-gotogether').css({opacity:0});
+        $(".story-left-nev").css({
+          position:"fixed"
+        });
+      }
+      else if(_wintop < _resettop && _wintop != 0){
+        $('.open-bigRed-world .img-cover').css({opacity:0});
+        $('.top-gotogether').css({opacity:1});
+        $(".story-left-nev").css({
+          position:"absolute"
+        });
+      }
+    })
+    //点击上下滚
+    $(function(){
+      var rh = $('.open-bigRed-world').height();
+      var story_h = $(".story-banner").height();
+      $(".story-left-nev").css({
+          top: rh+"px"
+        });
+      $('.story-center').attr('style','top:'+story_h+'px');
+      $(".active_1").click(function () {
+        var h1=$("#active_1").offset().top;
+        $("body,html").animate({scrollTop:h1-rh},300);
+      })
+      $(".active_2").click(function () {
+        var h2=$("#active_2").offset().top;
+        $("body,html").animate({scrollTop:h2-rh},300);
+      })
+      $(".active_3").click(function () {
+        var h3=$("#active_3").offset().top;
+        $("body,html").animate({scrollTop:h3-rh},300);
+      })
+      $(".active_4").click(function () {
+        var h4=$("#active_4").offset().top;
+        $("body,html").animate({scrollTop:h4-rh},300);
+      })
+    })
+  </script>
 </body>
 </html>

@@ -19,37 +19,134 @@
   padding-right: 0px;
   z-index: 1;
 }
-.china-box .story-banner {
-  position: relative;
+.china-box .open-bigRed-world {
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  z-index: 999;
+}
+.china-box .open-bigRed-world .open-bigRed-world-img {
+  position: absolute;
+  left: 12.5%;
+  bottom: 0;
+}
+.china-box .open-bigRed-world .img-cover {
+  background: #FFF;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.china-box .story-banner-box {
+  position: fixed;
+  z-index: 8;
+  top: 0px;
+  left: 0px;
   width: 100%;
   height: auto;
 }
-.china-box .story-banner .banner {
+.china-box .story-banner-box .story-banner {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 9;
+  overflow: hidden;
+}
+.china-box .story-banner-box .story-banner .banner {
   width: 100%;
   height: auto;
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
-.china-box .story-banner .bigRed-world {
+.china-box .story-banner-box .story-banner .banner a {
+  width: 150px;
+  height: 140px;
+  display: block;
+  position: absolute;
+  z-index: 11;
+}
+.china-box .story-banner-box .story-banner .banner a.link_global {
+  left: 32.5%;
+  top: 68.8%;
+}
+.china-box .story-banner-box .story-banner .banner a.link_china {
+  left: 46%;
+  top: 68.8%;
+}
+.china-box .story-banner-box .story-banner .banner a.link_zhejiang {
+  left: 59.63541666666667%;
+  top: 68.8%;
+}
+.china-box .story-banner-box .story-banner .bigRed-world {
   width: 76%;
   height: auto;
   position: absolute;
-  z-index: 9;
-  top: 8%;
+  z-index: 999;
+  top: 6.5%;
   left: 12.5%;
-  animation: myfirst 3s;
-  -moz-animation: myfirst 3s;
+  animation: myfirst 1s;
+  -moz-animation: myfirst 1s;
   /* Firefox */
-  -webkit-animation: myfirst 3s;
+  -webkit-animation: myfirst 1s;
   /* Safari 和 Chrome */
-  -o-animation: myfirst 3s;
+  -o-animation: myfirst 1s;
 }
-.china-box .story-banner .word-box {
+.china-box .story-banner-box .story-banner .word-box {
   text-align: center;
   position: relative;
   z-index: 3;
   line-height: 32px;
   top: -32px;
+}
+.china-box .story-center {
+  width: 100%;
+  height: auto;
+  position: relative;
+  left: 0px;
+  z-index: 9;
+}
+.china-box .story-center .story-left-nev {
+  width: 215px;
+  height: 344px;
+  position: absolute;
+  left: 10px;
+  top: 248px;
+  background: #f1f1f1;
+}
+.china-box .story-center .story-left-nev a {
+  width: 215px;
+  height: 86px;
+  display: block;
+  color: #5a5a5a;
+  line-height: 86px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+}
+.china-box .story-center .story-left-nev a:hover {
+  background: #e5e5e5;
+  text-decoration: none;
+}
+.china-box .story-center .story-left-nev a.activer {
+  background: #e5e5e5;
+}
+.china-box .story-center .top-gotogether {
+  width: 100%;
+  height: auto;
+  position: relative;
+  background: rgba(255, 255, 255, 0.5);
+}
+.china-box .story-center .top-gotogether img {
+  width: 100%;
+  height: auto;
+  opacity: 0;
 }
 @keyframes myfirst {
   from {
@@ -57,7 +154,7 @@
     opacity: 0;
   }
   to {
-    top: 8%;
+    top: 6.5%;
     opacity: 1;
   }
 }
@@ -68,7 +165,7 @@
     opacity: 0;
   }
   to {
-    top: 8%;
+    top: 6.5%;
     opacity: 1;
   }
 }
@@ -79,7 +176,7 @@
     opacity: 0;
   }
   to {
-    top: 8%;
+    top: 6.5%;
     opacity: 1;
   }
 }
@@ -90,7 +187,7 @@
     opacity: 0;
   }
   to {
-    top: 8%;
+    top: 6.5%;
     opacity: 1;
   }
 }
