@@ -12,11 +12,29 @@
 <body>
   <div class="container-fluid-home">
     <div class="videos">
-      <video id="video0" src="./videos/first.mp4" style="display: block;">
+      <video id="video0" class="video" src="./videos/first.mp4" style="display: block;">
         您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/first.mp4">视频地址</a>
       </video>
-      <video src="./videos/second.mp4" id="video1">
+      <video src="./videos/second.mp4" id="video1" class="video">
         您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/second.mp4">视频地址</a>
+      </video>
+      <video src="./videos/three.mp4" id="video2" class="video">
+        您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/three.mp4">视频地址</a>
+      </video>
+      <video src="./videos/four.mp4" id="video3" class="video">
+        您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/four.mp4">视频地址</a>
+      </video>
+      <video id="reversevideo0" class="reversevideo" src="./videos/refirst.mp4" style="display: block;">
+        您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/refirst.mp4">视频地址</a>
+      </video>
+      <video src="./videos/resecond.mp4" id="reversevideo1" class="reversevideo">
+        您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/resecond.mp4">视频地址</a>
+      </video>
+      <video src="./videos/rethree.mp4" id="reversevideo2" class="reversevideo">
+        您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/rethree.mp4">视频地址</a>
+      </video>
+      <video src="./videos/refour.mp4" id="reversevideo3" class="reversevideo">
+        您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/refour.mp4">视频地址</a>
       </video>
     </div>
     <div class="swiper-container-wrapper">
@@ -26,6 +44,21 @@
           <div class="swiper-slide">
             <div class="first swiper-img">
               <img src="./images/first.jpg" width="100%" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="first swiper-img">
+              <img src="./images/second.jpg" width="100%" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="first swiper-img">
+              <img src="./images/three.jpg" width="100%" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="first swiper-img">
+              <img src="./images/four.jpg" width="100%" alt="">
             </div>
           </div>
         </div>
@@ -121,10 +154,9 @@
   <script src="./js/swiper.jquery.min.js"></script>
   <script>
     $(function(){
-
+      // 检测该视频是否可以播放
       var getVideoCanPlay = function (video){
         return new Promise(resolve => {
-          console.log('readyState', video.readyState);
           if(!video.readyState){
             video.oncanplay = () => {
               // console.log('play')
@@ -133,55 +165,64 @@
           }else {
             resolve(video)
           }
-
         })
-      }
-
-
-      var prevSlideIndex = 0;
-      var video1EndMonitor = null;
+      };
+      // 监听该视频是否已经播放完
+      var VideoPlayEnd = video => new Promise(resolve => {
+        var videoMonitor = null;
+        videoMonitor = setInterval(() => {
+          if(video.ended){
+            clearInterval(videoMonitor);
+            videoMonitor = null;
+            resolve && resolve();
+          }
+        })
+      });
+      // 创建滑动组件
       var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
         direction: 'vertical',
         slidesPerView: 1,
-        paginationClickable: true,
+        paginationClickable: false,
         spaceBetween: 30,
         mousewheelControl: true,
         effect: 'fade',
         fade: {crossFade: true},
         onInit: function (){
-          var video0 = document.getElementById('video0');
-          var video1 = document.getElementById('video1');
-          getVideoCanPlay(video0).then((video) => {
+          var oVideo = document.getElementById('video0');
+          getVideoCanPlay(oVideo).then((video) => {
             video.play();
-          })
-          video0EndMonitor = setInterval(() => {
-            if(video0.ended) {
-              // 视频播放结束
-              console.log(video0.ended)
-              $('.first').addClass('end').removeClass('start');
-              video0EndMonitor && clearInterval(video0EndMonitor);
-              video0EndMonitor = null;
-              video0.style.display = 'none';
-              video1.style.display = 'block';
-            }
+          });
+          VideoPlayEnd(oVideo).then(() => {
+            $('.swiper-container').find('.swiper-slide-active').find('img').fadeIn('slow');
           })
         },
         onSlideChangeEnd: function(swiper){
-          // console.log(swiper)
-          // console.log(swiper.activeIndex) //切换结束时，告诉我现在是第几个slide
-          // console.log(swiper.activeIndex - prevSlideIndex > 0)
-          if(swiper.activeIndex - prevSlideIndex > 0){
-            // 正序
-            var nextVideo = document.getElementById('video' + swiper.activeIndex);
-            var prevVideo = document.getElementById('video' + prevSlideIndex);
+          var isReverse = swiper.activeIndex - swiper.previousIndex < 0;
+          var currentVideoIndex = !isReverse ? swiper.activeIndex + 1 : swiper.activeIndex;
+          var nextVideo = document.getElementById('video' + swiper.activeIndex);
+          var prevVideo = document.getElementById('reversevideo' + swiper.previousIndex);
+          swiper.lockSwipes();
+          $('.swiper-container').find('.swiper-slide').eq(swiper.previousIndex).find('img').hide();
+          if(!isReverse){
+            $('.videos').find('video').eq(swiper.activeIndex).show().siblings().hide();
             getVideoCanPlay(nextVideo).then(video => {
               video.play();
-            })
+            });
+            VideoPlayEnd(nextVideo).then(() => {
+              $('.swiper-container').find('.swiper-slide-active').find('img').fadeIn('slow');
+              swiper.unlockSwipes();
+            });
           }else {
-            // 倒序
+            $('.videos').find('.reversevideo').eq(swiper.previousIndex).show().siblings().hide();
+            getVideoCanPlay(prevVideo).then(video => {
+              video.play();
+            });
+            VideoPlayEnd(prevVideo).then(() => {
+              $('.swiper-container').find('.swiper-slide-active').find('img').fadeIn('slow');
+              swiper.unlockSwipes();
+            })
           }
-          prevSlideIndex = swiper.activeIndex;
         }
       });
     })
