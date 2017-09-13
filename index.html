@@ -28,15 +28,6 @@
               <img src="./images/first.jpg" width="100%" alt="">
             </div>
           </div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
-          <div class="swiper-slide">Slide 4</div>
-          <div class="swiper-slide">Slide 5</div>
-          <div class="swiper-slide">Slide 6</div>
-          <div class="swiper-slide">Slide 7</div>
-          <div class="swiper-slide">Slide 8</div>
-          <div class="swiper-slide">Slide 9</div>
-          <div class="swiper-slide">Slide 10</div>
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
@@ -133,6 +124,7 @@
 
       var getVideoCanPlay = function (video){
         return new Promise(resolve => {
+          console.log('readyState', video.readyState);
           if(!video.readyState){
             video.oncanplay = () => {
               // console.log('play')
@@ -177,8 +169,8 @@
         },
         onSlideChangeEnd: function(swiper){
           // console.log(swiper)
-          console.log(swiper.activeIndex) //切换结束时，告诉我现在是第几个slide
-          console.log(swiper.activeIndex - prevSlideIndex > 0)
+          // console.log(swiper.activeIndex) //切换结束时，告诉我现在是第几个slide
+          // console.log(swiper.activeIndex - prevSlideIndex > 0)
           if(swiper.activeIndex - prevSlideIndex > 0){
             // 正序
             var nextVideo = document.getElementById('video' + swiper.activeIndex);
