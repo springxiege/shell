@@ -1,0 +1,67 @@
+@import "mix";
+//china
+.china-box{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-left: 0px;
+    padding-right: 0px;
+    z-index: 1;
+    .story-banner{
+        position: relative;
+        width: 100%;
+        height: auto;
+        .banner{
+            width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 2;
+        }
+        .bigRed-world{
+            width: 76%;
+            height: auto;
+            position: absolute;
+            z-index: 9;
+            top: 8%;
+            left: 12.5%;
+            animation: myfirst 3s;
+            -moz-animation: myfirst 3s;	/* Firefox */
+            -webkit-animation: myfirst 3s;	/* Safari 和 Chrome */
+            -o-animation: myfirst 3s;
+        }
+        .word-box{
+            text-align: center;
+            position: relative;
+            z-index: 3;
+            line-height: 32px;
+            top: -32px;
+        }
+    }
+}
+
+
+//红色大字过度动画
+@keyframes myfirst
+{
+    from {top:-500px;opacity:0; }
+    to {top: 8%; opacity: 1;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+    from {top:-500px;opacity:0; }
+    to {top: 8%; opacity: 1;}
+}
+
+@-webkit-keyframes myfirst /* Safari 和 Chrome */
+{
+    from {top:-500px;opacity:0; }
+    to {top: 8%; opacity: 1;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+    from {top:-500px;opacity:0; }
+    to {top: 8%; opacity: 1;}
+}
