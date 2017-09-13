@@ -8,34 +8,132 @@
     padding-left: 0px;
     padding-right: 0px;
     z-index: 1;
-    .story-banner{
-        position: relative;
+    .open-bigRed-world{
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        position: fixed;
+        z-index: 999;
+        .open-bigRed-world-img{
+            position: absolute;
+            left: 12.5%;
+            bottom: 0;
+        }
+        .img-cover{
+            background: #FFF;
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+    }
+    .story-banner-box{
+        position: fixed;
+        z-index: 8;
+        top: 0px;
+        left: 0px;
         width: 100%;
         height: auto;
-        .banner{
+        .story-banner{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            z-index: 9;
+            overflow: hidden;
+            .banner{
+                width: 100%;
+                height: auto;
+                position: relative;
+                z-index: 10;
+                a{
+                    width: 150px;
+                    height: 140px;
+                    display: block;
+                    position: absolute;
+                    z-index: 11;
+                    &.link_global{
+                        left: 32.5%;
+                        top: 68.8%;
+                    }
+                    &.link_china{
+                        left: 46%;
+                        top: 68.8%;
+                    }
+                    &.link_zhejiang{
+                        left: 59.63541666666667%;
+                        top: 68.8%;
+                    }
+                }
+            }
+            .bigRed-world{
+                width: 76%;
+                height: auto;
+                position: absolute;
+                z-index: 999;
+                top: 6.5%;
+                left: 12.5%;
+                animation: myfirst 1s;
+                -moz-animation: myfirst 1s;	/* Firefox */
+                -webkit-animation: myfirst 1s;	/* Safari 和 Chrome */
+                -o-animation: myfirst 1s;
+            }
+            .word-box{
+                text-align: center;
+                position: relative;
+                z-index: 3;
+                line-height: 32px;
+                top: -32px;
+            }
+        }
+    }
+    .story-center{
+        width: 100%;
+        height: auto;
+        position: relative;
+        left: 0px;
+        z-index: 9;
+        .story-left-nev{
+            width: 215px;
+            height: 344px;
+            position: absolute;
+            left: 10px;
+            top: 248px;
+            background: #f1f1f1;
+            a{
+                width: 215px;
+                height: 86px;
+                display: block;
+                color: #5a5a5a;
+                line-height: 86px;
+                text-align: center;
+                font-weight: 600;
+                font-size: 16px;
+                &:hover{
+                    background: #e5e5e5;
+                    text-decoration: none;
+                }
+                &.activer{
+                    background: #e5e5e5;
+                }
+            }
+
+        }
+        .top-gotogether{
             width: 100%;
             height: auto;
             position: relative;
-            z-index: 2;
-        }
-        .bigRed-world{
-            width: 76%;
-            height: auto;
-            position: absolute;
-            z-index: 9;
-            top: 8%;
-            left: 12.5%;
-            animation: myfirst 3s;
-            -moz-animation: myfirst 3s;	/* Firefox */
-            -webkit-animation: myfirst 3s;	/* Safari 和 Chrome */
-            -o-animation: myfirst 3s;
-        }
-        .word-box{
-            text-align: center;
-            position: relative;
-            z-index: 3;
-            line-height: 32px;
-            top: -32px;
+            background: rgba(255, 255, 255,0.5);
+            img{
+                width: 100%;
+                height: auto;
+                opacity: 0;
+            }
         }
     }
 }
@@ -45,23 +143,23 @@
 @keyframes myfirst
 {
     from {top:-500px;opacity:0; }
-    to {top: 8%; opacity: 1;}
+    to {top: 6.5%; opacity: 1;}
 }
 
 @-moz-keyframes myfirst /* Firefox */
 {
     from {top:-500px;opacity:0; }
-    to {top: 8%; opacity: 1;}
+    to {top: 6.5%; opacity: 1;}
 }
 
 @-webkit-keyframes myfirst /* Safari 和 Chrome */
 {
     from {top:-500px;opacity:0; }
-    to {top: 8%; opacity: 1;}
+    to {top: 6.5%; opacity: 1;}
 }
 
 @-o-keyframes myfirst /* Opera */
 {
     from {top:-500px;opacity:0; }
-    to {top: 8%; opacity: 1;}
+    to {top: 6.5%; opacity: 1;}
 }
