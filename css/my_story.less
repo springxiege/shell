@@ -8,6 +8,14 @@
     padding-left: 0px;
     padding-right: 0px;
     z-index: 1;
+    .story-logo{
+        width: 157px;
+        height: 81px;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 9999;
+    }
     .open-bigRed-world{
         width: 100%;
         top: 0;
@@ -19,6 +27,7 @@
             position: absolute;
             left: 12.5%;
             bottom: 0;
+            z-index: 9;
         }
         .img-cover{
             background: #FFF;
@@ -28,7 +37,10 @@
             height: 100%;
             left: 0;
             top: 0;
-            z-index: -1;
+            z-index: 2;
+        }
+        .bg{
+            opacity: 0;
         }
     }
     .story-banner-box{
@@ -52,8 +64,8 @@
                 position: relative;
                 z-index: 10;
                 a{
-                    width: 150px;
-                    height: 140px;
+                    width: 7.8125%;
+                    height: 18.66666666666667%;
                     display: block;
                     position: absolute;
                     z-index: 11;
@@ -84,6 +96,8 @@
                 -o-animation: myfirst 1s;
             }
             .word-box{
+                width: 100%;
+                height: auto;
                 text-align: center;
                 position: relative;
                 z-index: 3;
@@ -100,7 +114,7 @@
         z-index: 9;
         .story-left-nev{
             width: 215px;
-            height: 344px;
+            height: auto;
             position: absolute;
             left: 10px;
             top: 248px;
