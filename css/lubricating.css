@@ -1,0 +1,56 @@
+.bsb {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'HanSans';
+  src: url('../bootstrap/fonts/font-en/Futura.ttc');
+}
+@font-face {
+  font-family: 'HanSansZh';
+  src: url('../bootstrap/fonts/font-zh/SourceHanSansCN-Regular.otf');
+  src: url('../bootstrap/fonts/font-zh/SourceHanSansCN-Regular.otf') format('otf');
+}
+.container-lubricating {
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-bottom: 60px;
+}
+.container-lubricating .lubricating {
+  width: 100%;
+}
+.container-lubricating .lubricating .lubricating-img {
+  box-sizing: border-box;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin: 0 auto;
+  background-color: #ffd005;
+}
+.container-lubricating .lubricating .lubricating-img img {
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.container-lubricating .lubricating h2 {
+  font-size: 36px;
+  padding: 40px 0 0 40px;
+}
+.container-lubricating .lubricating .content {
+  padding-top: 60px;
+}
+.container-lubricating .lubricating .content .index {
+  display: inline-block;
+  font-size: 28px;
+  color: #fff;
+  background-color: #d42e12;
+  font-family: "HanSans";
+  padding: 0 5px;
+  border-radius: 4px;
+}
+.container-lubricating .lubricating .content .summary {
+  padding-left: 70px;
+  font-size: 16px;
+  font-family: "HanSans";
+  color: #404040;
+}
