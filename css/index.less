@@ -4,6 +4,15 @@ body {
   background-color: @white;
   .bsb;
 }
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
+}
 .fl {float: left;}
 .fr {float: right;}
 // 底部导航
@@ -41,3 +50,6 @@ body {
 @import "lubricating";
 // 列表模块
 @import "list";
+// 常见问题
+@import "problem";
+
