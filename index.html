@@ -12,20 +12,61 @@
 <body>
   <div class="container-fluid-home">
     <div class="videos">
-      <video id="video0" src="./videos/first.mp4" style="display: block;">
+      <video id="video0" class="video" src="./videos/first.mp4" style="display: block;">
         您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/first.mp4">视频地址</a>
       </video>
-      <video src="./videos/second.mp4" id="video1">
+      <video src="./videos/second.mp4" id="video1" class="video">
         您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/second.mp4">视频地址</a>
+      </video>
+      <video src="./videos/three.mp4" id="video2" class="video">
+        您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/three.mp4">视频地址</a>
+      </video>
+      <video src="./videos/four.mp4" id="video3" class="video">
+        您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/four.mp4">视频地址</a>
+      </video>
+      <video id="reversevideo0" class="reversevideo" src="./videos/refirst.mp4" style="display: block;">
+        您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/refirst.mp4">视频地址</a>
+      </video>
+      <video src="./videos/resecond.mp4" id="reversevideo1" class="reversevideo">
+        您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/resecond.mp4">视频地址</a>
+      </video>
+      <video src="./videos/rethree.mp4" id="reversevideo2" class="reversevideo">
+        您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/rethree.mp4">视频地址</a>
+      </video>
+      <video src="./videos/refour.mp4" id="reversevideo3" class="reversevideo">
+        您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/refour.mp4">视频地址</a>
       </video>
     </div>
     <div class="swiper-container-wrapper">
       <!-- Swiper -->
-      <div class="swiper-container">
+      <div class="swiper-container j-video-container-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="first swiper-img">
               <img src="./images/first.jpg" width="100%" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="first swiper-img">
+              <img src="./images/second.jpg" width="100%" alt="">
+            </div>
+            <!-- <div class="inner-swiper-container ">
+              <div class="swiper-container j-inner-container-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">5555555</div>
+                  <div class="swiper-slide">6666666</div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <div class="swiper-slide">
+            <div class="first swiper-img">
+              <img src="./images/three.jpg" width="100%" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="first swiper-img">
+              <img src="./images/four.jpg" width="100%" alt="">
             </div>
           </div>
         </div>
@@ -119,72 +160,6 @@
   <script src="./js/jquery.min-1.12.1.js"></script>
   <script src="./bootstrap/js/bootstrap.min.js"></script>
   <script src="./js/swiper.jquery.min.js"></script>
-  <script>
-    $(function(){
-
-      var getVideoCanPlay = function (video){
-        return new Promise(resolve => {
-          console.log('readyState', video.readyState);
-          if(!video.readyState){
-            video.oncanplay = () => {
-              // console.log('play')
-              resolve(video)
-            }
-          }else {
-            resolve(video)
-          }
-
-        })
-      }
-
-
-      var prevSlideIndex = 0;
-      var video1EndMonitor = null;
-      var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        direction: 'vertical',
-        slidesPerView: 1,
-        paginationClickable: true,
-        spaceBetween: 30,
-        mousewheelControl: true,
-        effect: 'fade',
-        fade: {crossFade: true},
-        onInit: function (){
-          var video0 = document.getElementById('video0');
-          var video1 = document.getElementById('video1');
-          getVideoCanPlay(video0).then((video) => {
-            video.play();
-          })
-          video0EndMonitor = setInterval(() => {
-            if(video0.ended) {
-              // 视频播放结束
-              console.log(video0.ended)
-              $('.first').addClass('end').removeClass('start');
-              video0EndMonitor && clearInterval(video0EndMonitor);
-              video0EndMonitor = null;
-              video0.style.display = 'none';
-              video1.style.display = 'block';
-            }
-          })
-        },
-        onSlideChangeEnd: function(swiper){
-          // console.log(swiper)
-          // console.log(swiper.activeIndex) //切换结束时，告诉我现在是第几个slide
-          // console.log(swiper.activeIndex - prevSlideIndex > 0)
-          if(swiper.activeIndex - prevSlideIndex > 0){
-            // 正序
-            var nextVideo = document.getElementById('video' + swiper.activeIndex);
-            var prevVideo = document.getElementById('video' + prevSlideIndex);
-            getVideoCanPlay(nextVideo).then(video => {
-              video.play();
-            })
-          }else {
-            // 倒序
-          }
-          prevSlideIndex = swiper.activeIndex;
-        }
-      });
-    })
-  </script>
+  <script src="./js/index.js"></script>
 </body>
 </html>

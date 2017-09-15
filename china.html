@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CHINA</title>
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <div class="container-fluid china-box">
+    <div class="story-logo"><img src="images/logo.png" width="157" alt=""></div>
+    <div class="story-banner-box">
+        <div class="story-banner">
+            <div class="bigRed-world"><img src="images/story-china-word.png" width="100%" alt="" /></div>
+            <div class="banner">
+              <a href="#" class="link_global"></a>
+              <a href="#" class="link_china"></a>
+              <a href="#" class="link_zhejiang"></a>
+              <img src="images/story-china-banner1.png" width="100%" alt="" />
+            </div>
+            <div class="word-box">
+                <p><b>更共同创造，共同期盼</b></p>
+                <p>展望壳牌为中国梦助力的前景，更将造福深远</p>
+                <p>“中国梦”需要更多、更清洁、更可持续的能源去点燃</p>
+                <p>壳牌愿在下一个一百二十年为竭尽全力</p>
+                <p>助力这个伟大的国度和这里的人民开创更加美好的能源未来</p>
+            </div>
+        </div>
+    </div>
+    <div class="open-bigRed-world">
+      <img src="images/story-china-bg.png" width="100%" class="bg" alt="" />
+      <img src="images/story-china-word.png" class="open-bigRed-world-img" width="76%" alt="" />
+      <div class="img-cover"></div>
+    </div>
+    <div class="story-center">
+        <div class="story-left-nev">
+          <a class="active_1" href="#">发展历程</a>
+          <a class="active_2" href="#">发展现状</a>
+          <a class="active_3" href="#">从数字看壳牌中国</a>
+          <a class="active_4" href="#">壳牌在中国的战略</a>
+        </div>
+        <div class="top-gotogether">
+          <img src="images/story-china-bg.png" width="100%" alt="" />
+        </div>
+        <div class="story-center-dis" style="height:1000px;">
+          <div class="story-center-item">
+            <a id="active_1"></a>
+            <img src="images/china01.png" width="100%" alt="">
+          </div>
+          <div class="story-center-item">
+            <a id="active_2"></a>
+            <img src="images/china02.png" width="100%" alt="">
+          </div>
+          <div class="story-center-item">
+            <a id="active_3"></a>
+            <img src="images/china03.png" width="100%" alt="">
+          </div>
+          <div class="story-center-item">
+            <a id="active_4"></a>
+            <img src="images/china04.png" width="100%" alt="">
+          </div>
+        </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-shell navbar-fixed-bottom">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand navbar-brand-shell" href="#">浙江壳牌燃油有限公司</a>
+      </div>
+      <!-- Collect the nav links -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active">
+            <a href="./index.html">
+              <div>
+                <p>HOME</p>
+                <p>首页</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="./story.html">
+              <div>
+                <p>STORY</p>
+                <p>我们的故事</p>
+              </div>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a href="./here.html" class="dropdown-toggle" >
+              <div>
+                <p>NEWS</p>
+                <p>资讯在浙里</p>
+              </div>
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="./activities.html">最新活动</a></li>
+              <li><a href="./news.html">壳牌洞察</a></li>
+              <li><a href="./oilsitemap.html">油站分布</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="./product.html">
+              <div>
+                <p>PRODUCT</p>
+                <p>产品与服务</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="./about.html">
+              <div>
+                <p>CAREERS</p>
+                <p>壳动人才</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="./questions.html">
+              <div>
+                <p>Q&A</p>
+                <p>问题与回答</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="./map.html">
+              <div>
+                <p>MAP</p>
+                <p>地图分布</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <script src="./js/jquery.min-1.12.1.js"></script>
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <script>
+    //页面滚动
+    $(window).scroll(function () {
+      var _resettop=$(".story-center").offset().top;
+      var _wintop=$(window).scrollTop();
+      if(_wintop > 100 && _wintop < _resettop){
+        $('.open-bigRed-world').css({opacity:1});
+        $('.bigRed-world').css({opacity:0});
+      }else if(_wintop < _resettop && _wintop != 0){
+        $('.open-bigRed-world').css({opacity:0});
+        $('.bigRed-world').css({opacity:1});
+      }
+      if(_wintop > _resettop){
+        $('.open-bigRed-world .img-cover').css({opacity:0.5});
+        $('.open-bigRed-world .bg').css({opacity:1});
+        $('.top-gotogether').css({opacity:0});
+        $(".story-left-nev").css({
+          position:"fixed"
+        });
+      }
+      else if(_wintop < _resettop && _wintop != 0){
+        $('.open-bigRed-world .img-cover').css({opacity:0});
+        $('.open-bigRed-world .bg').css({opacity:0});
+        $('.top-gotogether').css({opacity:1});
+        $('.story-left-nev a').removeClass('activer');
+        $(".story-left-nev").css({
+          position:"absolute"
+        });
+      }
+    })
+    //点击上下滚
+    $(function(){
+      var rh = $('.open-bigRed-world').height();
+      var story_h = $(".story-banner").height();
+      $(".story-left-nev").css({
+          top: rh+"px"
+        });
+      $('.story-center').attr('style','top:'+story_h+'px');
+      $(".active_1").click(function () {
+        var h1=$("#active_1").offset().top;
+        $('.story-left-nev a').removeClass('activer');
+        $(this).addClass('activer');
+        $("body,html").animate({scrollTop:h1-rh},300);
+      })
+      $(".active_2").click(function () {
+        var h2=$("#active_2").offset().top;
+        $('.story-left-nev a').removeClass('activer');
+        $(this).addClass('activer');
+        $("body,html").animate({scrollTop:h2-rh},300);
+      })
+      $(".active_3").click(function () {
+        var h3=$("#active_3").offset().top;
+        $('.story-left-nev a').removeClass('activer');
+        $(this).addClass('activer');
+        $("body,html").animate({scrollTop:h3-rh},300);
+      })
+      $(".active_4").click(function () {
+        var h4=$("#active_4").offset().top;
+        $('.story-left-nev a').removeClass('activer');
+        $(this).addClass('activer');
+        $("body,html").animate({scrollTop:h4-rh},300);
+      })
+    })
+  </script>
+</body>
+</html>

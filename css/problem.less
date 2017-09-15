@@ -1,0 +1,132 @@
+@import "mix";
+.problem-box{
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    background: @gray;
+    .problem-banner{
+        width: 100%;
+        height: auto;
+    }
+    .problem-center{
+        margin: auto;
+        background:@white;
+        width: 66.5625%;
+        height: auto;
+    }
+    .center-item{
+        width: 85%;
+        height: auto;
+        margin: auto;
+        border-bottom: 2px solid @gray;
+        .title{
+            height: 44px;
+            line-height: 44px;
+            font-size: 16px;
+            color: @default-color;
+            font-weight: 600;
+            .add{
+                width: 20px;
+                height: 20px;
+                color: #ff0000;
+                font-size: 20px;
+                line-height: 20px;
+                margin: 12px 10px;
+                text-align: center;
+                &.cur{
+                    transform:rotate(45deg);
+                    -ms-transform:rotate(45deg); /* Internet Explorer */
+                    -moz-transform:rotate(45deg); /* Firefox */
+                    -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+                    -o-transform:rotate(45deg); /* Opera */
+                }
+            }
+            &.red{
+                color: #ff0000;
+                text-decoration: underline;
+            }
+            
+        }
+        .item-dis{
+            padding: 20px 0px 30px 0;
+            line-height: 32px;
+            display: none;
+        }
+    }
+}
+.pop-problem-box{
+    display: none;
+    width: 68%;
+    position: fixed;
+    top: 10%;
+    left: 16%;
+    background: @white;
+    z-index: 1050;
+    .close{
+        a{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            z-index: 6;
+            right: 10px;
+            top: 10px;
+            color: @default-color;
+        }
+    }
+    .Name,.Email,.Telephone{
+        width: 60%;
+        margin: 10px auto;
+        height: 44px;
+        line-height: 44px;
+        border-top: 2px solid #e7e7e7;
+        input{
+            width: 100%;
+            height: 44px;
+            text-indent: 10px;
+            background-color: @gray;
+            border: none;
+        }
+    }
+    .Opinion-box{
+        width: 60%;
+        height: auto;
+        border-top: 2px solid #e7e7e7;
+        margin: 10px auto;
+        .Opinion{
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            text-indent: 10px;
+            background-color: @gray;
+            border: none;
+            line-height: 32px;
+            padding: 20px 0;
+        }
+    }
+    .submit-box{
+        width: 60%;
+        margin: 10px auto;
+        text-align: right;
+        a{
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            color: @white;
+            text-align: center;
+            background-color: #ff0000;
+            display: block;
+        }
+    }
+}
+.popcover{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1040;
+    background: rgba(255, 255, 255, 0.5);
+}

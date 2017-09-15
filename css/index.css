@@ -31,6 +31,19 @@ body {
   .container-fluid-product {
     position: relative !important;
   }
+  .logo {
+    left: 5px !important;
+    top: 10px !important;
+  }
+  .logo img {
+    width: 60px;
+  }
+}
+.logo {
+  position: absolute;
+  z-index: 2;
+  left: 30px;
+  top: 25px;
 }
 .navbar-shell {
   background-color: #d42e12;
@@ -116,12 +129,6 @@ body {
   height: 100%;
   overflow: hidden;
 }
-.container-fluid-product .logo {
-  position: absolute;
-  z-index: 2;
-  left: 30px;
-  top: 25px;
-}
 .container-fluid-product > .row {
   height: 100%;
   overflow: hidden;
@@ -151,6 +158,12 @@ body {
   overflow: hidden;
   position: relative;
   z-index: 1;
+}
+.container-fluid-product .product .back {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  z-index: 4;
 }
 .container-fluid-product .product img {
   display: block;
@@ -237,8 +250,62 @@ body {
   padding-right: 10px;
   box-sizing: border-box;
 }
+.container-fluid-product .oil .oil-content .oil-cars {
+  padding: 30px 0;
+}
 .container-fluid-product .oil .oil-content p {
   margin-bottom: 20px;
+}
+.container-fluid-product .oil .oil-content img {
+  max-width: 100%;
+}
+.container-fluid-product .oil .oil-content .tabs {
+  margin-left: -30px;
+  margin-right: -30px;
+}
+.container-fluid-product .oil .oil-content .tabs ul,
+.container-fluid-product .oil .oil-content .tabs li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.container-fluid-product .oil .oil-content .tabs li {
+  float: left;
+  width: 20%;
+}
+.container-fluid-product .oil .oil-content .tabs li > div {
+  padding: 20px;
+}
+.container-fluid-product .oil .oil-content .tabs li > div img {
+  display: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.container-fluid-product .oil .oil-content .tabs li > div img:last-of-type {
+  display: none;
+}
+.container-fluid-product .oil .oil-content .tabs li > div img:first-of-type {
+  display: block;
+}
+.container-fluid-product .oil .oil-content .tabs li.active > div img:first-of-type {
+  display: none;
+}
+.container-fluid-product .oil .oil-content .tabs li.active > div img:last-of-type {
+  display: block;
+}
+.container-fluid-product .oil .oil-content .tabs .tab-panel {
+  padding: 50px 30px;
+}
+.container-fluid-product .oil .oil-content .tabs .tab-panel .tab-content {
+  display: none;
+  opacity: 0;
+  transition: all .5s;
+}
+.container-fluid-product .oil .oil-content .tabs .tab-panel .tab-content.active {
+  display: block;
+  opacity: 1;
+  transition: all .5s;
 }
 .container-fluid-here {
   position: absolute;
@@ -253,12 +320,6 @@ body {
   background-position: right bottom;
   background-size: auto auto;
 }
-.container-fluid-here .logo {
-  position: absolute;
-  z-index: 2;
-  left: 30px;
-  top: 25px;
-}
 .container-fluid-home {
   position: absolute;
   left: 0;
@@ -267,7 +328,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: #eee;
+  background-color: #fff;
 }
 .container-fluid-home .videos {
   position: absolute;
@@ -276,6 +337,7 @@ body {
   z-index: 2;
   width: 100%;
   height: 100%;
+  background-color: #fff;
 }
 .container-fluid-home .videos video {
   display: none;
@@ -313,10 +375,371 @@ body {
   -webkit-align-items: center;
   align-items: center;
 }
+.container-fluid-home .swiper-slide .inner-swiper-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.container-fluid-home .swiper-slide .swiper-img {
+  margin-top: -5%;
+}
 .container-fluid-home .swiper-slide .swiper-img img {
-  opacity: 0;
+  display: none;
 }
 .container-fluid-home .swiper-slide .swiper-img.end img {
   opacity: 1;
   transition: all .5s;
+}
+.china-box {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+  z-index: 1;
+}
+.china-box .story-logo {
+  width: 157px;
+  height: 81px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+}
+.china-box .open-bigRed-world {
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  z-index: 999;
+}
+.china-box .open-bigRed-world .open-bigRed-world-img {
+  position: absolute;
+  left: 12.5%;
+  bottom: 0;
+  z-index: 9;
+}
+.china-box .open-bigRed-world .img-cover {
+  background: #FFF;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+.china-box .open-bigRed-world .bg {
+  opacity: 0;
+}
+.china-box .story-banner-box {
+  position: fixed;
+  z-index: 8;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: auto;
+}
+.china-box .story-banner-box .story-banner {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 9;
+  overflow: hidden;
+}
+.china-box .story-banner-box .story-banner .banner {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 10;
+}
+.china-box .story-banner-box .story-banner .banner a {
+  width: 7.8125%;
+  height: 18.66666666666667%;
+  display: block;
+  position: absolute;
+  z-index: 11;
+}
+.china-box .story-banner-box .story-banner .banner a.link_global {
+  left: 32.5%;
+  top: 68.8%;
+}
+.china-box .story-banner-box .story-banner .banner a.link_china {
+  left: 46%;
+  top: 68.8%;
+}
+.china-box .story-banner-box .story-banner .banner a.link_zhejiang {
+  left: 59.63541666666667%;
+  top: 68.8%;
+}
+.china-box .story-banner-box .story-banner .bigRed-world {
+  width: 76%;
+  height: auto;
+  position: absolute;
+  z-index: 999;
+  top: 6.5%;
+  left: 12.5%;
+  animation: myfirst 1s;
+  -moz-animation: myfirst 1s;
+  /* Firefox */
+  -webkit-animation: myfirst 1s;
+  /* Safari 和 Chrome */
+  -o-animation: myfirst 1s;
+}
+.china-box .story-banner-box .story-banner .word-box {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  line-height: 32px;
+  top: -32px;
+}
+.china-box .story-center {
+  width: 100%;
+  height: auto;
+  position: relative;
+  left: 0px;
+  z-index: 9;
+}
+.china-box .story-center .story-left-nev {
+  width: 215px;
+  height: auto;
+  position: absolute;
+  left: 10px;
+  top: 248px;
+  background: #f1f1f1;
+}
+.china-box .story-center .story-left-nev a {
+  width: 215px;
+  height: 86px;
+  display: block;
+  color: #5a5a5a;
+  line-height: 86px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+}
+.china-box .story-center .story-left-nev a:hover {
+  background: #e5e5e5;
+  text-decoration: none;
+}
+.china-box .story-center .story-left-nev a.activer {
+  background: #e5e5e5;
+}
+.china-box .story-center .top-gotogether {
+  width: 100%;
+  height: auto;
+  position: relative;
+  background: rgba(255, 255, 255, 0.5);
+}
+.china-box .story-center .top-gotogether img {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+}
+@keyframes myfirst {
+  from {
+    top: -500px;
+    opacity: 0;
+  }
+  to {
+    top: 6.5%;
+    opacity: 1;
+  }
+}
+@-moz-keyframes myfirst {
+  /* Firefox */
+  from {
+    top: -500px;
+    opacity: 0;
+  }
+  to {
+    top: 6.5%;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes myfirst {
+  /* Safari 和 Chrome */
+  from {
+    top: -500px;
+    opacity: 0;
+  }
+  to {
+    top: 6.5%;
+    opacity: 1;
+  }
+}
+@-o-keyframes myfirst {
+  /* Opera */
+  from {
+    top: -500px;
+    opacity: 0;
+  }
+  to {
+    top: 6.5%;
+    opacity: 1;
+  }
+}
+.container-lubricating {
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-bottom: 60px;
+}
+.container-lubricating .lubricating {
+  width: 100%;
+}
+.container-lubricating .lubricating .lubricating-img {
+  box-sizing: border-box;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin: 0 auto;
+  background-color: #ffd005;
+}
+.container-lubricating .lubricating .lubricating-img img {
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.container-lubricating .lubricating h2 {
+  font-size: 36px;
+  padding: 40px 0 0 40px;
+}
+.container-lubricating .lubricating .content {
+  padding-top: 60px;
+}
+.container-lubricating .lubricating .content .index {
+  display: inline-block;
+  font-size: 28px;
+  color: #fff;
+  background-color: #d42e12;
+  font-family: "HanSans";
+  padding: 0 5px;
+  border-radius: 4px;
+}
+.container-lubricating .lubricating .content .summary {
+  padding-left: 70px;
+  font-size: 16px;
+  font-family: "HanSans";
+  color: #404040;
+}
+.container-fluid-other {
+  padding: 50px;
+  margin-top: 50px;
+  background-color: #f7f7f7;
+  box-sizing: border-box;
+}
+.container-fluid-other h2 {
+  text-align: center;
+}
+.list {
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+.list > .list-img {
+  position: relative;
+  z-index: 1;
+}
+.list > .list-img img {
+  display: block;
+  width: 100%;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.list .list-content {
+  position: relative;
+  z-index: 2;
+  margin-top: -40px;
+  padding: 20px;
+}
+.list .list-content .list-main {
+  padding: 20px 40px 40px;
+  border-bottom: 10px solid #d42e12;
+  background-color: #fff;
+  color: #404040;
+}
+.list .list-content .list-main h3 {
+  color: #404040;
+  margin-bottom: 20px;
+}
+.list .list-content .list-main .list-summary {
+  font-size: 16px;
+  color: #404040;
+  font-family: "HanSans";
+  font-weight: 200;
+  line-height: 24px;
+}
+.container-intro {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  background-color: #f3da2d;
+}
+.container-intro video {
+  width: 100%;
+  height: 100%;
+  background-color: #f3da2d;
+}
+.skip {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.skip a {
+  position: fixed;
+  z-index: 1001;
+  right: 50px;
+  bottom: 50px;
+  font-size: 32px;
+  font-family: "HanSans";
+  color: #a58822;
+}
+.container-detail-title {
+  position: relative;
+  z-index: 999;
+}
+.container-detail-title h1 {
+  width: 50%;
+  margin: -50px auto 0;
+  padding: 20px 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 40px;
+  border-bottom: 10px solid #d42e12;
+}
+.container-detail {
+  width: 100%;
+}
+.container-detail > img {
+  display: block;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.container-detail .container-detail-main {
+  padding: 30px 0;
+}
+.container-detail .container-detail-main img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
 }

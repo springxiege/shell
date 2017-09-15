@@ -4,11 +4,43 @@ body {
   background-color: @white;
   .bsb;
 }
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
+}
 .fl {float: left;}
 .fr {float: right;}
 // 底部导航
 .navbar-brand-shell {
   padding: 20px 30px;
+}
+.swiper-position {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  .swiper-left {
+    .swiper-content {
+      width: 80%;
+      img {
+        width: 100%
+      }
+    }
+  }
+  .swiper-right {
+    .swiper-content {
+      width: 80%;
+      img {
+        width: 100%
+      }
+    }
+  }
 }
 @media (max-width: 768px){
   .navbar-brand-shell {
@@ -17,7 +49,16 @@ body {
   .container-fluid-product {
     position: relative !important;
   }
+  .logo {
+    left: 5px !important;
+    top: 10px !important;
+    img {
+      width: 60px;
+    }
+  }
 }
+// logo
+@import 'logo';
 // 导航栏
 @import "nav";
 // 产品与服务
@@ -26,3 +67,15 @@ body {
 @import "here";
 // 首页
 @import "home";
+//我的故事
+@import "my_story";
+// 润滑油防伪
+@import "lubricating";
+// 列表模块
+@import "list";
+// 常见问题
+@import "problem";
+// intro页
+@import "intro";
+// 详情页
+@import "detail";
