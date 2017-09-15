@@ -23,9 +23,3 @@
   background-position: right bottom;
   background-size: auto auto;
 }
-.container-fluid-here .logo {
-  position: absolute;
-  z-index: 2;
-  left: 30px;
-  top: 25px;
-}

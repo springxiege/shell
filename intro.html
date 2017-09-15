@@ -4,9 +4,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>引导页</title>
+  <title>欢迎来到壳牌</title>
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
+  <div class="container-fluid">
+    <div class="container-intro">
+      <video src="./videos/intro.mp4">您的浏览器不支持video标签，请升级浏览器再浏览本页面！<a href="./videos/intro.mp4">视频地址</a></video>
+    </div>
+    <div class="skip">
+      <a href="./index.html">skip</a>
+    </div>
+  </div>
+  <script src="./js/jquery.min-1.12.1.js"></script>
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <script>
+  $(function(){
+    // 监听该视频是否已经播放完
+    var VideoPlayEnd = video => new Promise(resolve => {
+      var videoMonitor = null;
+      videoMonitor = setInterval(() => {
+        if(video.ended){
+          clearInterval(videoMonitor);
+          videoMonitor = null;
+          resolve && resolve();
+        }
+      })
+    });
+    const $video = $('video')
+    $video.css({backgroundColor: 'rgba(236, 208, 74, 0.75)'})
+    $video.get(0).oncanplay = function(){
+      $(document).off();
+      this.play()
+      setTimeout(() => {
+        $video.css({backgroundColor: '#f3da2d'})
+      },5250)
+    };
+    VideoPlayEnd($video.get(0)).then(() => {
+      console.log('end')
 
+    })
+    setTimeout(() => {
+      $(document).on('keypress', function(e){
+        console.log(e.which)
+        if(e.which === 13){
+          window.location.href = './index.html'
+        }
+      })
+      .on('click', '.skip', function(){
+        window.location.href = './index.html'
+      })
+    }, 52000)
+    // $(document).keypress(function(e){
+    //   console.log(e.which)
+    //   if(e.which == 13){
+
+    //   }
+    // });
+  })
+  </script>
 </body>
 </html>
