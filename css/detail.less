@@ -46,3 +46,51 @@
     }
   }
 }
+.entry {
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: @tip-color;
+  color: @default-color;
+
+  .entry-btn {
+    display: block;
+    width: 60%;
+    height: 100%;
+    padding: 15px 0;
+    background-color: @default-color;
+    color: @tip-color;
+    text-align: center;
+    font-size: 18px;
+    font-family: "HanSans";
+    cursor: pointer;
+    img {
+      margin-right: 10px;
+      width: 36px;
+      vertical-align: -12px;
+    }
+    &.fr {
+      margin-right: -5px;
+    }
+    &.fl {
+      margin-left: -5px;
+    }
+  }
+}
+.activitiesentries{
+  padding: 30px 10%;
+  position: relative;
+  h2 {
+    text-align: center;
+    padding-bottom: 50px;
+    font-size: 40px;
+    color: @default-color;
+  }
+  .swiper-button-prev {
+    left: 6%;
+  }
+  .swiper-button-next {
+    right: 6%;
+  }
+}

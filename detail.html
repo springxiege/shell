@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>详情页</title>
   <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/swiper.min.css">
   <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
@@ -45,7 +46,127 @@
             </div>
         </div>
     </div>
+    <div class="entry">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <a class="entry-btn fr" href="./activities.html"><img src="./images/icon1.png" alt="">了解更多活动</a>
+          </div>
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <span class="entry-btn fl"><img src="./images/icon3.png" alt="">扫码关注公众号</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="activitiesentries">
+      <h2>活动相关</h2>
+      <div class="swiper-container swiper-container-horizontal ">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="list">
+                <div class="list-img"><img src="./images/o10.jpg" alt=""></div>
+                <div class="list-content">
+                  <div class="list-main">
+                    <h3>壳牌润滑油防伪</h3>
+                    <div class="list-summary">
+                      科研人员开发出壳牌劲霸霜重负荷机油，用于保护您的引擎并帮助您降低维护成本。
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="list">
+                <div class="list-img"><img src="./images/o10.jpg" alt=""></div>
+                <div class="list-content">
+                  <div class="list-main">
+                    <h3>壳牌润滑油防伪</h3>
+                    <div class="list-summary">
+                      科研人员开发出壳牌劲霸霜重负荷机油，用于保护您的引擎并帮助您降低维护成本。
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="list">
+                <div class="list-img"><img src="./images/o10.jpg" alt=""></div>
+                <div class="list-content">
+                  <div class="list-main">
+                    <h3>壳牌润滑油防伪</h3>
+                    <div class="list-summary">
+                      科研人员开发出壳牌劲霸霜重负荷机油，用于保护您的引擎并帮助您降低维护成本。
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
 
+      </div>
+      <!-- 如果需要导航按钮 -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    <footer class="footermap">
+      <img src="./images/mapsitebg.jpg" alt="">
+      <div class="mapsite">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="footer-nav">
+                      <ul>
+                        <li><a href="#">我们的故事&ensp;&ensp;STORY</a></li>
+                        <li><a href="#">产品与服务&ensp;&ensp;PRODUCT</a></li>
+                        <li><a href="#">资讯在浙里&ensp;&ensp;NEWS</a></li>
+                        <li><a href="#">壳动人才&ensp;&ensp;CAREERS</a></li>
+                        <li><a href="#">听见你的声音&ensp;&ensp;Q&A</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="links">
+                      <ul>
+                        <li><a href="#">友情链接</a></li>
+                        <li><a href="#">壳牌中国</a></li>
+                        <li><a href="#">壳牌中国集团微博</a></li>
+                        <li><a href="#">浙江壳牌石油有限公司微博</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <div class="concatus">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                      <div class="address">
+                        <p>联系我们</p>
+                        <p>地址：浙江省杭州市下城区绍兴路161号野风现代中心北楼2103室</p>
+                        <p>电话：01038498378</p>
+                        <p>邮箱：bjshell.shell.com</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                      <div class="qcode">
+                        <div class="qcode-img"><img src="./images/qcode.jpg" alt=""></div>
+                        <p>微信扫描二维码查看</p>
+                        <p>壳牌（浙江）微信公众号</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
   <nav class="navbar navbar-shell navbar-fixed-bottom">
     <div class="container-fluid">
@@ -130,5 +251,36 @@
   </nav>
   <script src="./js/jquery.min-1.12.1.js"></script>
   <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <script src="./js/swiper.jquery.min.js"></script>
+  <script>
+
+    var swiper = new Swiper('.swiper-container', {
+      pagination: '.swiper-pagination',
+      paginationClickable: true,
+      slidesPerView: 2,
+      spaceBetween: 50,
+      breakpoints: {
+        1024: {
+            slidesPerView: 2,
+            spaceBetween: 50
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 15
+        },
+        640: {
+            slidesPerView: 1,
+            spaceBetween: 10
+        },
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 10
+        }
+      },
+      prevButton: '.swiper-button-prev',
+      nextButton: '.swiper-button-next'
+    });
+
+  </script>
 </body>
 </html>
