@@ -6,11 +6,110 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>壳牌洞察</title>
   <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/swiper.min.css">
   <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-  <div class="container-fluid">
-
+  <div class="container-fluid container-fluid-here">
+    <div class="logo"><img src="./images/logo.png" alt=""></div>
+    <div class="row">
+        <div class="col-md-5 col-ms-12 col-xs-12">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2 col-sm-12 col-xs-12"></div>
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="here-news">
+                        <div class="news-container">
+                          <h2>INSIGHTS <p>壳牌洞察</p></h2>
+                          <div class="summary">
+                            在这里您将了解到更多关于浙江壳牌中国的动态，时刻关注壳牌中国的业务。
+                          </div>
+                          <span><img src="./images/icon1.png" alt=""></span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-7 col-ms-12 col-xs-12">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="newslist">
+                  <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="list news-list">
+                          <a href="./images/detail.html">
+                            <div class="list-img"><img src="./images/o10.jpg" alt=""></div>
+                            <div class="list-content">
+                              <div class="list-main">
+                                <h3>壳牌润滑油防伪</h3>
+                                <p class="list-time"><small>2017-09-16</small></p>
+                                <div class="list-summary">
+                                  科研人员开发出壳牌劲霸霜重负荷机油，用于保护您的引擎并帮助您降低维护成本。
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="list news-list">
+                          <a href="./images/detail.html">
+                            <div class="list-img"><img src="./images/o10.jpg" alt=""></div>
+                            <div class="list-content">
+                              <div class="list-main">
+                                <h3>壳牌润滑油防伪</h3>
+                                <p class="list-time"><small>2017-09-16</small></p>
+                                <div class="list-summary">
+                                  科研人员开发出壳牌劲霸霜重负荷机油，用于保护您的引擎并帮助您降低维护成本。
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="list news-list">
+                          <a href="./images/detail.html">
+                            <div class="list-img"><img src="./images/o10.jpg" alt=""></div>
+                            <div class="list-content">
+                              <div class="list-main">
+                                <h3>壳牌润滑油防伪</h3>
+                                <p class="list-time"><small>2017-09-16</small></p>
+                                <div class="list-summary">
+                                  科研人员开发出壳牌劲霸霜重负荷机油，用于保护您的引擎并帮助您降低维护成本。
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="list news-list">
+                          <a href="./images/detail.html">
+                            <div class="list-img"><img src="./images/o10.jpg" alt=""></div>
+                            <div class="list-content">
+                              <div class="list-main">
+                                <h3>壳牌润滑油防伪</h3>
+                                <p class="list-time"><small>2017-09-16</small></p>
+                                <div class="list-summary">
+                                  科研人员开发出壳牌劲霸霜重负荷机油，用于保护您的引擎并帮助您降低维护成本。
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
   </div>
   <nav class="navbar navbar-shell navbar-fixed-bottom">
     <div class="container-fluid">
@@ -44,7 +143,7 @@
             </a>
           </li>
           <li class="active dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <a href="./here.html" class="dropdown-toggle">
               <div>
                 <p>NEWS</p>
                 <p>资讯在浙里</p>
@@ -95,5 +194,22 @@
   </nav>
   <script src="./js/jquery.min-1.12.1.js"></script>
   <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <script src="./js/swiper.jquery.min.js"></script>
+  <script>
+  $(function(){
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1.9,
+      spaceBetween: 30,
+      freeMode: true,
+      mousewheelControl: true,
+      centeredSlides: true,
+      mousewheelEventsTarged: '.container-fluid-here',
+      onInit: function(swiper){
+        console.log(swiper.translate)
+        swiper.setWrapperTranslate(100);
+      }
+    })
+  })
+  </script>
 </body>
 </html>

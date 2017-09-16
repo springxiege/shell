@@ -11,7 +11,7 @@
 .list {
   margin-bottom: 20px;
   .bsb;
-  > .list-img {
+  .list-img {
     position: relative;
     z-index: 1;
     img {
@@ -20,6 +20,8 @@
       border: 0;
       margin: 0;
       padding: 0;
+      transform: scale(1, 1);
+      transition: all .5s;
     }
   }
   .list-content {
@@ -37,6 +39,10 @@
         color: @default-color;
         margin-bottom: 20px;
       }
+      .list-time {
+        margin-top: -15px;
+        color: darken(@gray, 20%);
+      }
       .list-summary {
         font-size: 16px;
         color: @default-color;
@@ -45,5 +51,15 @@
         line-height: 24px;
       }
     }
+  }
+  & > a:hover {
+    text-decoration: none;
+    >.list-img {
+      img {
+        transform: scale(1.1, 1.1);
+        transition: all .5s;
+      }
+    }
+
   }
 }
